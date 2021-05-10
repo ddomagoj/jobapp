@@ -1,0 +1,11 @@
+New application created <%= @application.job.title %>!
+===============================================
+
+ Details:
+--------------------------
+
+Created by: <%= @application.first_name %>
+Title: <%= @application.job.title %>
+
+Message:
+<%= @application.job.description %>

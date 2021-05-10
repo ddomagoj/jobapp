@@ -1,0 +1,10 @@
+You applied for new job  <%= @application.job.title %>!
+===============================================
+
+application.job Details:
+--------------------------
+
+Title: <%= @application.job.title %>
+
+Message:
+<%= @application.job.description %>

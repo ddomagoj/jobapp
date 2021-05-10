@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<div class="applications-wraper">
+<h1>Applications</h1>
+<div class="row ">
+  <% @applications.each do |application| %>
+    <div class="col-lg-4">
+<div class="card" >
+<div class="card-header header-02"><%= application.job.category %></div>
+  <div class="card-body">
+    <h5 class="card-title"><%= application.job.title %></h5>
+    <h6 class="card-text"><%= application.job.employer %></h6>
+    <p class="card-text"><%= application.first_name %> <%= application.last_name %></p>
+    <%= link_to 'Show', application,class: "btn btn-primary" %>
+  </div>
+  <div class="card-footer text-muted">
+    <%= application.email%>
+  </div>
+</div>
+  </div>
+<% end %>
+</div>
+</div>

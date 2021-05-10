@@ -1,0 +1,10 @@
+You created new job <%= @job.name %>!
+===============================================
+
+Job Details:
+--------------------------
+
+Title: <%= @job.title %>
+
+Message:
+<%= @job.description %>

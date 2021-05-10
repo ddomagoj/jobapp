@@ -1,0 +1,13 @@
+example_id                                      | status | run_time        |
+----------------------------------------------- | ------ | --------------- |
+./spec/features/application_create_spec.rb[1:1] | failed | 0.13869 seconds |
+./spec/features/job_create_spec.rb[1:1]         | passed | 0.25207 seconds |
+./spec/features/job_edit_spec.rb[1:1]           | passed | 0.1131 seconds  |
+./spec/features/register_user_spec.rb[1:1]      | passed | 0.09411 seconds |
+./spec/features/register_user_spec.rb[1:2]      | passed | 0.03869 seconds |
+./spec/features/signin_user_spec.rb[1:1]        | passed | 0.03889 seconds |
+./spec/features/signout_user_spec.rb[1:1]       | passed | 0.72685 seconds |
+./spec/models/jobs_spec.rb[1:1:1:1]             | failed | 0.06542 seconds |
+./spec/models/jobs_spec.rb[1:1:2:1]             | failed | 0.00521 seconds |
+./spec/models/user_spec.rb[1:1]                 | passed | 0.00184 seconds |
+./spec/models/user_spec.rb[1:2]                 | passed | 0.00222 seconds |

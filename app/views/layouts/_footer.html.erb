@@ -1,0 +1,25 @@
+<footer>
+<div class="footer-wraper text-center">
+  <h3>Jobtracker</h3>
+  <%= image_tag "/assets/media-ikone.png" %>
+  <% if current_user %>
+  <div class="">
+    <ul class="nav justify-content-center footer-menu">
+      <li><%= link_to "Home", pages_home_path, class: "nav-link" %></li>
+      <li><%= link_to "Jobs", jobs_path, class: "nav-link" %></li>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link", id: "Logout", disabled: "false" %>
+      <%= link_to "Edit", edit_user_registration_path, class: "nav-link" %>
+    </ul>
+  </div>
+  <% else%>
+  <div class="">
+    <ul class="nav justify-content-center footer-menu">
+      <li><%= link_to "Home", pages_home_path, class: "nav-link" %></li>
+      <li><%= link_to "Jobs", jobs_path, class: "nav-link" %></li>
+      <li><%= link_to "Register", new_user_registration_path, class: "nav-link"  %></li>
+      <li><%= link_to "Login", new_user_session_path, disabled: "false", autocomplete: "false", class: "nav-link" %></li>
+    </ul>
+  </div>
+  <% end %>
+  </div>
+</footer>

@@ -1,0 +1,53 @@
+<%= form_with(model: @application, local: true, :url => {:action => "create", :job_id => @job.id, :controller => "applications"}) do |form| %>
+  <% if @application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@application.errors.count, "error") %> prohibited this application from being saved:</h2>
+      <ul>
+        <% @application.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+  <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<div class="col-lg-10 offset-1"><h3>Apply for job</h3></div>
+  <div class="row">
+    <div class="col-lg-10 offset-1">
+      <%= form.hidden_field :job_id, value: @job.id %>
+      <%= form.label :first_name %><br/>
+      <%= form.text_field :first_name, class: "form-control", disabled: "false" %>
+    </div>
+    <div class="col-lg-10 offset-1">
+      <%= form.label :last_name %><br/>
+      <%= form.text_field :last_name, class: "form-control" %>
+    </div>
+    <div class="col-lg-10 offset-1">
+      <%= form.label :born_on %><br/>
+      <%= form.text_field :born_on, class: "form-control" %>
+    </div>
+    <div class="col-lg-10 offset-1">
+      <%= form.label :email %><br/>
+      <%= form.text_field :email, class: "form-control" %>
+    </div>
+    <div class="col-lg-10 offset-1">
+      <%= form.label :phone %><br/>
+      <%= form.text_field :phone, class: "form-control" %>
+    </div>
+    <div class="col-lg-10 offset-1">
+      <%= form.label :address %><br/>
+      <%= form.text_field :address, class: "form-control" %>
+    </div>
+    <div class="col-lg-10 offset-1">
+      <%= form.label :education%><br/>
+      <%= form.select :education,['VSS', 'SSS', 'NKV'], {}, {class: "form-control"} %><br/>
+    </div>
+    <div class="col-lg-10 offset-1">
+      <%= form.label :CV_File%><br/>
+      <%= form.file_field :cv_file, {class: "form-control"} %><br/>
+    </div>
+    <div class="actions col-lg-10 offset-1">
+      <%= form.submit "Create Application", class: "form-control btn btn-primary" %>
+    </div>
+  </div><br><br>
+</div>
+<% end %>

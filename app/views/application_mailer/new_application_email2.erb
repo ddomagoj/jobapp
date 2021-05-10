@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>New application created <%= @application.job.title %>!</p>
+    <p>
+    application details<br>
+    --------------------------
+    </p>
+    <p>Title: <%= @application.job.title %></p>
+    <p>Created by: <%= @application.first_name %></p>
+    <p>
+    Message:<br>
+    ----------
+    </p>
+    <p><%= @application.job.description %></p>
+  </body>
+</html>

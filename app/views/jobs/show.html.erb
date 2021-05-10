@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-lg-10 offset-1">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-header"><%= @job.category %></div>
+        <h5 class="card-title"><%= @job.title %></h5>
+        <h6 class="card-text"><%= @job.employer %></h6>
+        <p class="card-text"><%= @job.description %></p>
+        <p class="card-text"><%= @job.email %></p>
+        <% if @job.job_belong?(current_user)%>
+        <%= link_to 'Edit', edit_job_path(@job),id: "Edit", class: "btn btn-primary", disabled: "false", autofill: "false" %>
+        <%= link_to 'Destroy', @job, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", id:"Destroy" %>
+            <% end %>
+        <%= link_to 'Back', jobs_path, class: "btn btn-primary" %> 
+      </div>
+    </div><br>
+
+    <% if @job.job_applied?(current_user) %>
+      <h3 class="alert alert-danger"> You applied for this job </h3>
+    <% elsif @job.job_expiered?%>
+      <h3 class="alert alert-danger">This job expiered</h3>
+    <% elsif @job.job_belong?(current_user)%>
+      <h3 class="alert alert-danger"> You created this job </h3>
+    <% else%>
+      <%= render 'form_application', job: @job %>
+    <% end %>
+  </div>
+</div>

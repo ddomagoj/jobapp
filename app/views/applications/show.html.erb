@@ -1,0 +1,19 @@
+<div class="row applications-wraper">
+  <div class="col-lg-10 offset-1">
+<div class="card">
+  <div class="card-body">
+    <div class="card-header header-02"><%= @application.job.title %></div>
+    <h5 class="card-title"><%= @application.last_name %> <%= @application.first_name %></h5>
+    <h6 class="card-text"><%= @application.born_on %></h6>
+    <p class="card-text"><%= @application.email %></p>
+    <p class="card-text"><%= @application.phone %></p>
+    <p class="card-text"><%= @application.address %></p>
+    <p class="card-text"><%= @application.education %></p>
+    <p class="card-text"><%= @application.cv_file.filename %></p>
+    <%= link_to 'Edit', edit_application_path(@application), class: "btn btn-primary" %>
+    <%= link_to 'Destroy', @application, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    <%= link_to 'Back', applications_path, class: "btn btn-primary" %> 
+  </div>
+</div>
+  </div>
+</div>

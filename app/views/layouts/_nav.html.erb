@@ -1,0 +1,39 @@
+<div>
+  <% if current_user %>
+      <ul class="nav justify-content-end">
+        <li class="nav-left"><%= link_to "JobTracker", pages_home_path, class: "nav-link" %><li>
+        <li class="nav-item">
+          <%= link_to "Home", pages_home_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Jobs", jobs_path, class: "nav-link", id: "Jobs" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Applications", applications_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link", id: "Logout", disabled: "false" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Edit", edit_user_registration_path, class: "nav-link" %>
+        </li>
+      </ul>
+  <% else %>
+      <ul class="nav justify-content-end">
+        <li class="nav-left"><%= link_to "JobTracker", pages_home_path, class: "nav-link" %><li>
+        <li class="nav-item">
+          <%= link_to "Home", pages_home_path, class: "nav-link", id: "Home" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Jobs", jobs_path, class: "nav-link", id: "Jobs" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Register", new_user_registration_path, class: "nav-link", id: "Registers"  %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, autocomplete: "false", class: "nav-link", id: "Login", disabled: "false" %>
+        </li>
+      </ul>
+  <% end%>
+</div>
+
