@@ -1,10 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<% if user_signed_in?%>
-<%= link_to 'New Job', new_job_path,class: "btn btn-primary", id: "New Job", disabled: "falses", autocomplete: "false" %>
-<% end %>
 <h1>Jobs</h1>
-<div class="row">
+<div class="col-lg-12  jobs">
+<% if user_signed_in?%>
+<%= link_to 'Create New Job', new_job_path,class: "btn btn-secondary btn-block", id: "New Job", disabled: "false", autocomplete: "false" %>
+<% end %>
+</div>
+<div class="row ">
   <% @jobs.each do |job| %>
     <div class="col-lg-4">
       <div class="card" style="height: 95%;">
