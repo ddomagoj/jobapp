@@ -15,14 +15,6 @@
       </div>
     </div><br>
 
-    <% if @job.job_applied?(current_user) %>
-      <h3 class="alert alert-danger"> You applied for this job </h3>
-    <% elsif @job.job_expiered?%>
-      <h3 class="alert alert-danger">This job expiered</h3>
-    <% elsif @job.job_belong?(current_user)%>
-      <h3 class="alert alert-danger"> You created this job </h3>
-    <% else%>
-      <%= render 'form_application', job: @job %>
-    <% end %>
+    <%= show_application_form(@job) %>
   </div>
 </div>
