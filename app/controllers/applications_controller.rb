@@ -4,7 +4,7 @@ class ApplicationsController < ApplicationController
 
   
   def index
-    @applications = Application.user_applications(current_user)
+    @applications = Application.all_except(current_user)
   end
 
   def show

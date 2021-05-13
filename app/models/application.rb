@@ -11,9 +11,9 @@ class Application < ApplicationRecord
 
   accepts_nested_attributes_for :job
 
-  def self.user_applications(user)
-    where(user_id: user.id)
-  end
+  scope :all_except, ->(user) { where.not(user_id: user.id) }
+
+  
 
 
  
