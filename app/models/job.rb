@@ -11,13 +11,13 @@ class Job < ApplicationRecord
 
   accepts_nested_attributes_for :applications
 
-  scope :find_jobs, ->(user) {
-    if user
-       where.not(user_id: user.id) 
-    else
-      all
-    end
-  }
+  # scope :find_jobs, ->(user) {
+  #   if user
+  #      where.not(user_id: user.id) 
+  #   else
+  #     all
+  #   end
+  # }
   
 
   def job_belong?(user)

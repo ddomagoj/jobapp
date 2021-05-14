@@ -3,7 +3,7 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, except:[:index]
 
   def index
-    @jobs = Job.find_jobs(current_user)
+    @jobs = Job.all.shuffle
   end
 
   def show
